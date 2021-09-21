@@ -1,0 +1,23 @@
+<h2>Books:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Copies</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.availableCopies}"></td>
+        <td><a th:href="@{/book/{id}(id=${book.id})}">Edit</a></td>
+        <td><a th:href="@{/book/delete/{id}(id=${book.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a th:href="@{/book}">Add new book</a></p>
